@@ -2,6 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.raven</groupId>
 	<artifactId>secure-spring-mvc-db-auth</artifactId>
+	<name>secure-spring-mvc-db-auth</name>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -66,7 +67,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>secure-spring-web-mvc-db-auth-application</finalName>
+		<finalName>secure-spring-mvc-db-auth</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
