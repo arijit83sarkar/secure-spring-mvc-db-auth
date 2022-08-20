@@ -32,23 +32,26 @@ public class ApplicationConfiguration {
 	}
 
 	@Bean(name = "jdbcDataSource")
-	public DataSource getDataSource() {
-		BasicDataSource dataSource = new BasicDataSource();
+	public DataSource getJdbcDataSource() {
+		BasicDataSource jdbcDataSource = new BasicDataSource();
 
 		try {
-			dataSource.setDriverClassName(environment.getProperty("jdbc.driver"));
-			dataSource.setUrl(environment.getProperty("jdbc.url"));
-			dataSource.setUsername(environment.getProperty("jdbc.user"));
-			dataSource.setPassword(environment.getProperty("jdbc.password"));
+			jdbcDataSource.setDriverClassName(environment.getProperty("jdbc.driver"));
+			jdbcDataSource.setUrl(environment.getProperty("jdbc.url"));
+			jdbcDataSource.setUsername(environment.getProperty("jdbc.user"));
+			jdbcDataSource.setPassword(environment.getProperty("jdbc.password"));
 
-			dataSource.setInitialSize(Integer.parseInt(environment.getProperty("dbcp2.initial-size")));
-			dataSource.setMaxIdle(Integer.parseInt(environment.getProperty("dbcp2.max-idle")));
-			dataSource.setDefaultQueryTimeout(Integer.parseInt(environment.getProperty("dbcp2.default-query-timeout")));
-			dataSource.setDefaultAutoCommit(Boolean.valueOf(environment.getProperty("dbcp2.default-auto-commit")));
+			jdbcDataSource.setInitialSize(Integer.parseInt(environment.getProperty("dbcp2.initial-size")));
+			jdbcDataSource.setMaxIdle(Integer.parseInt(environment.getProperty("dbcp2.max-idle")));
+			jdbcDataSource
+					.setDefaultQueryTimeout(Integer.parseInt(environment.getProperty("dbcp2.default-query-timeout")));
+			jdbcDataSource.setDefaultAutoCommit(Boolean.valueOf(environment.getProperty("dbcp2.default-auto-commit")));
+
+//			System.out.println("----->>>>>>> User Name -->> " + jdbcDataSource.getUsername());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return dataSource;
+		return jdbcDataSource;
 	}
 }
