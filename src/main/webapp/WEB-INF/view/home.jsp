@@ -30,14 +30,14 @@ body {
 <body>
 	<div class="header">
 		<h1>Spring Security</h1>
-		<p>Welcome to Spring Security with DB Authentication</p>
+		<p>Welcome to Spring Security with JDBC Authentication</p>
 	</div>
 
 	<div class="content">
 		<h1>Home</h1>
-		<p>In this tutorial, we'll learn how to show our custom login form
-			in-place of Spring Security provided login form and also implement
-			logout facility.</p>
+		<p>In this tutorial we'll learn how to secure a Spring MVC
+			application using the user stored in the database along with a custom
+			login page and logout facility.</p>
 		<p>
 			<form:form action="${pageContext.request.contextPath}/logout"
 				method="POST">
